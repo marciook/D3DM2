@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  String nome = 'Fulano';
+  MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              OutlinedButton(
+                  onPressed: () {
+                    nome = 'Marcio';
+                    print(nome);
+                  },
+                  child: const Text('Mostre Nome')),
+              Text('Nome: $nome')
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
