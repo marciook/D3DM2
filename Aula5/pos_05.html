@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-12 Thu 16:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Mauro Jacob Honorato" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+body {
+        font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    }
+    
+    h1, h2, h3 {
+        font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8fc890b">1. Controler</a>
+<ul>
+<li><a href="#orgbbfa64d">1.1. TextEditingController</a>
+<ul>
+<li><a href="#orgd57bf42">1.1.1. Criando TextEditingController</a></li>
+<li><a href="#org8a4f00e">1.1.2. Ligar controlador ao campo</a></li>
+<li><a href="#org7a9825d">1.1.3. Ler o valor</a></li>
+<li><a href="#orgc735d14">1.1.4. Atualizar o valor do campo de texto</a></li>
+</ul>
+</li>
+<li><a href="#org8d88112">1.2. Passos</a></li>
+<li><a href="#orgf79a3ea">1.3. Exercício</a></li>
+</ul>
+</li>
+<li><a href="#orgad5cd1e">2. Trabalhando com abas</a>
+<ul>
+<li><a href="#org0e6b648">2.1. Criando DefaultTabController</a></li>
+<li><a href="#orgd918314">2.2. Mostrar abas</a></li>
+<li><a href="#orga859ec4">2.3. Conteúdo</a></li>
+<li><a href="#org1619d2a">2.4. Passos</a></li>
+<li><a href="#org5a24dca">2.5. Exercício</a></li>
+</ul>
+</li>
+<li><a href="#orgcd005a2">3. Usando menu drawer</a>
+<ul>
+<li><a href="#org2965f1c">3.1. Criando Drawer</a></li>
+<li><a href="#org8eec5a3">3.2. Passos</a></li>
+<li><a href="#orgff34dd2">3.3. Exercício</a></li>
+</ul>
+</li>
+<li><a href="#orgac7f29b">4. Enviando dados entre telas</a>
+<ul>
+<li><a href="#orgdef2384">4.1. Exercícios</a></li>
+</ul>
+</li>
+<li><a href="#org8d0238c">5. Retornando dados de uma tela</a></li>
+<li><a href="#org0445479">6. Envio dos exercícios</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8fc890b" class="outline-2">
+<h2 id="org8fc890b"><span class="section-number-2">1.</span> Controler</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://docs.flutter.dev/cookbook/forms/retrieve-input">https://docs.flutter.dev/cookbook/forms/retrieve-input</a>
+</p>
+</div>
+
+<div id="outline-container-orgbbfa64d" class="outline-3">
+<h3 id="orgbbfa64d"><span class="section-number-3">1.1.</span> TextEditingController</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+TextEditingController é um objeto que controla o texto dentro de um campo de texto TextField.
+</p>
+</div>
+
+<div id="outline-container-orgd57bf42" class="outline-4">
+<h4 id="orgd57bf42"><span class="section-number-4">1.1.1.</span> Criando TextEditingController</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<div class="org-src-container">
+<pre class="src src-dart">TextEditingController controlador = TextEditingController();  
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8a4f00e" class="outline-4">
+<h4 id="org8a4f00e"><span class="section-number-4">1.1.2.</span> Ligar controlador ao campo</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<div class="org-src-container">
+<pre class="src src-dart">TextField(
+	controller: controlador,
+),
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7a9825d" class="outline-4">
+<h4 id="org7a9825d"><span class="section-number-4">1.1.3.</span> Ler o valor</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<div class="org-src-container">
+<pre class="src src-dart">print(controlador.text);
+
+numero = int.parse(controlador.text);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc735d14" class="outline-4">
+<h4 id="orgc735d14"><span class="section-number-4">1.1.4.</span> Atualizar o valor do campo de texto</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<div class="org-src-container">
+<pre class="src src-dart">controlador.text = '$resultado';
+
+controlador.text = '';
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d88112" class="outline-3">
+<h3 id="org8d88112"><span class="section-number-3">1.2.</span> Passos</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>Criar um controlador TextEditingController</li>
+<li>Ajustar o controlador de TextField</li>
+<li>Mostrar o valor atual do controlador</li>
+</ol>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/XeZGEpzuhoQ" title="Flutter Aula5 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-orgf79a3ea" class="outline-3">
+<h3 id="orgf79a3ea"><span class="section-number-3">1.3.</span> Exercício</h3>
+<div class="outline-text-3" id="text-1-3">
+<ol class="org-ol">
+<li value="1">Crie um novo projeto, copie o código <a href="https://github.com/maurojh/Flutter_Aula5_2024_pr1/tree/main">main.dart</a> do GitHub, abra o menu View-&gt;Problems e faça todos os 3 TODOS, apague os comentários quando terminar.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgad5cd1e" class="outline-2">
+<h2 id="orgad5cd1e"><span class="section-number-2">2.</span> Trabalhando com abas</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+As abas são um padrão de design comum em aplicativos móveis. Navegamos por diferentes partes da app usando a organização em abas. Para criar abas em Flutter usamos DefaultTabController para saber em qual aba estamos e TabBarView para indicar o conteúdo de cada aba.
+</p>
+</div>
+
+<div id="outline-container-org0e6b648" class="outline-3">
+<h3 id="org0e6b648"><span class="section-number-3">2.1.</span> Criando DefaultTabController</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Usamos o construtor <a href="https://api.flutter.dev/flutter/material/DefaultTabController-class.html">DefaultTabController</a> (ver vídeo!)  
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dart">return MaterialApp(
+  home: DefaultTabController(
+    length: 2, // quantidade de abas
+    child: Scaffold(
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd918314" class="outline-3">
+<h3 id="orgd918314"><span class="section-number-3">2.2.</span> Mostrar abas</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Criamos <a href="https://api.flutter.dev/flutter/material/TabBar-class.html">TabBar</a> que contém as abas (tabs). Cada aba é criada com <a href="https://api.flutter.dev/flutter/material/Tab-class.html">Tab</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dart">appBar: AppBar(
+  bottom: const TabBar(
+    tabs: [
+      Tab(
+	      text: 'Soma',
+      ),
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga859ec4" class="outline-3">
+<h3 id="orga859ec4"><span class="section-number-3">2.3.</span> Conteúdo</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+O conteúdo é exibido conforme a ordem em que aparece em <a href="https://api.flutter.dev/flutter/material/TabBarView-class.html">TabBarView</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dart">body: const TabBarView(
+  children: [
+    Text('Soma'),
+    Text('Subtração'),
+  ],
+),
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1619d2a" class="outline-3">
+<h3 id="org1619d2a"><span class="section-number-3">2.4.</span> Passos</h3>
+<div class="outline-text-3" id="text-2-4">
+<ol class="org-ol">
+<li>Usar <a href="https://api.flutter.dev/flutter/material/DefaultTabController-class.html">DefaultTabController</a> como home de MaterialApp.</li>
+<li>Criar as abas com TabBar dentro de appBar.</li>
+<li>Ajustar o conteúdo de cada aba com TabBarView no body.</li>
+</ol>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/B8CrU-vk6Os" title="Flutter Aula5 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-org5a24dca" class="outline-3">
+<h3 id="org5a24dca"><span class="section-number-3">2.5.</span> Exercício</h3>
+<div class="outline-text-3" id="text-2-5">
+<ol class="org-ol">
+<li value="2">No projeto <a href="https://github.com/maurojh/Flutter_Aula5_2024_pr2">https://github.com/maurojh/Flutter_Aula5_2024_pr2</a> crie a aba subtração e adicione a aba multiplicação.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcd005a2" class="outline-2">
+<h2 id="orgcd005a2"><span class="section-number-2">3.</span> Usando menu drawer</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href="https://docs.flutter.dev/cookbook/design/drawer">https://docs.flutter.dev/cookbook/design/drawer</a>
+</p>
+
+<p>
+Quando não cabem mais menus em abas use <a href="https://api.flutter.dev/flutter/material/Drawer-class.html">Drawer</a>.
+</p>
+</div>
+
+<div id="outline-container-org2965f1c" class="outline-3">
+<h3 id="org2965f1c"><span class="section-number-3">3.1.</span> Criando Drawer</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<a href="https://api.flutter.dev/flutter/material/Drawer-class.html">Drawer</a> é ajustado como uma propriedade de Scaffold. (Ver vídeo!)
+</p>
+
+<p>
+<a href="https://docs.flutter.dev/cookbook/design/drawer">Aqui</a> você encontra uma descrição de como adicionar Drawer e o conteúdo em formado de Itens (<a href="https://api.flutter.dev/flutter/material/ListTile-class.html?_gl=1*15635nc*_ga*ODE2MDk5NDYuMTYxMzUyMDA3MQ..*_ga_04YGWK0175*MTcyNjE2NzA1My4yMTcuMS4xNzI2MTY3Nzc1LjAuMC4w">ListTile</a>) de uma lista (<a href="https://api.flutter.dev/flutter/widgets/ListView-class.html">ListView</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8eec5a3" class="outline-3">
+<h3 id="org8eec5a3"><span class="section-number-3">3.2.</span> Passos</h3>
+<div class="outline-text-3" id="text-3-2">
+<ol class="org-ol">
+<li>Adicione a propriedade drawer de Scaffold.</li>
+<li>Adicione filho ao Drawer.</li>
+</ol>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/-oNRqdWR4FY" title="Flutter Aula5 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-orgff34dd2" class="outline-3">
+<h3 id="orgff34dd2"><span class="section-number-3">3.3.</span> Exercício</h3>
+<div class="outline-text-3" id="text-3-3">
+<ol class="org-ol">
+<li value="3">Ajuste o projeto em <a href="https://github.com/maurojh/Flutter_Aula5_2024_pr3">https://github.com/maurojh/Flutter_Aula5_2024_pr3</a> para conter os menus Soma, Subtração, Multiplicação e Divisão usando Drawer com ListView.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac7f29b" class="outline-2">
+<h2 id="orgac7f29b"><span class="section-number-2">4.</span> Enviando dados entre telas</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Estude:
+</p>
+
+<p>
+<a href="https://docs.flutter.dev/cookbook/navigation/passing-data">https://docs.flutter.dev/cookbook/navigation/passing-data</a>
+</p>
+</div>
+
+<div id="outline-container-orgdef2384" class="outline-3">
+<h3 id="orgdef2384"><span class="section-number-3">4.1.</span> Exercícios</h3>
+<div class="outline-text-3" id="text-4-1">
+<ol class="org-ol">
+<li value="4">Na tela soma, permita que o usuário aperte um botão e vá para a tela subtração levando o resultado anterior junto como valor de X. Faça o mesmo na tela subtração para soma.</li>
+
+<li value="5">Crie em um novo projeto uma calculadora o visor deve ser um campo de texto desativado. Coloque ao menos botões para os números de 0-9, para as quatro operações básicas, um botão para apagar o último número no visor. Um botão para separador de decimal. E um botão para o resultado (=).</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d0238c" class="outline-2">
+<h2 id="org8d0238c"><span class="section-number-2">5.</span> Retornando dados de uma tela</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="https://docs.flutter.dev/cookbook/navigation/returning-data">https://docs.flutter.dev/cookbook/navigation/returning-data</a>
+</p>
+
+<ol class="org-ol">
+<li value="6">Criar um projeto novo, usar texteditingcontroler para receber altura e peso e calcular IMC.</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org0445479" class="outline-2">
+<h2 id="org0445479"><span class="section-number-2">6.</span> Envio dos exercícios</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<a href="https://forms.gle/yiVaR6BWaRRsBrqQ7">https://forms.gle/yiVaR6BWaRRsBrqQ7</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Mauro Jacob Honorato</p>
+<p class="date">Created: 2024-09-12 Thu 16:28</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
